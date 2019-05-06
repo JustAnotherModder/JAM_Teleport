@@ -8,6 +8,7 @@
 ## Download & Installation
 
 ### Manually
+- Make sure you have all requirements (and their dependencies) installed correctly before continuing.
 - Download https://github.com/JustAnotherModder/JAM_Teleport/archive/master.zip
 - Extract the JAM_Teleport folder (and its contents) into your `JAM` folder, inside of your `resources` directory.
 - Open `__resource.lua` in your `JAM` folder.
