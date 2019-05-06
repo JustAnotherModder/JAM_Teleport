@@ -43,7 +43,10 @@ function JTP:Update()
 						hit,coord,normal,ent = GetShapeTestResult(ray, hit, coord, normal, ent)
 
 						attempt = attempt + 1
-						if attempt >= 100 then normal = plyPos; end
+						if attempt >= 100 then 
+							normal = plyPos 
+							ESX.ShowNotification("~r~Can't teleport to this waypoint.")
+						end
 					end
 
 					if normal.x == 0.0 and normal.y == 0.0 and normal.z == 0.0 then 
