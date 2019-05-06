@@ -35,10 +35,3 @@ server_scripts {
 	'JAM_Teleport/JAM_Teleport_Server.lua',
 }
 ```
-
-## Installation
-- Add this in your server.cfg :
-
-```
-start JAM_Garage
-```
