@@ -8,7 +8,7 @@ function JTP:Update()
 
 	while true do
 		Citizen.Wait(0)
-		local tpPressed = IsControlJustPressed(0, JUtils.Keys["PAGEDOWN"]) or IsDisabledControlJustPressed(0, JUtils.Keys["PAGEDOWN"])
+		local tpPressed = IsControlJustPressed(0, JUtils.Keys[self.EnableKey]) or IsDisabledControlJustPressed(0, JUtils.Keys[self.EnableKey])
 		if tpPressed and (GetGameTimer() - self.timer) > 150 then
 
 			self.timer = GetGameTimer()
@@ -16,6 +16,7 @@ function JTP:Update()
 			local canContinue = false
 			ESX.TriggerServerCallback('JAM:GetAceGroup', function(group) if group ~= "admin" and group ~= "superadmin" then canContinue = 1; else canContinue = 2; end; end)
 			while not canContinue do Citizen.Wait(0); end
+			
 			if canContinue == 2 then 
 				if not IsWaypointActive() then
 					ESX.ShowNotification("~r~Set a waypoint first.")
