@@ -33,6 +33,7 @@ server_scripts {
 	-- Teleport
 	'JAM_Teleport/JAM_Teleport_Config.lua',
 	'JAM_Teleport/JAM_Teleport_Server.lua',
+}
 ```
 
 ## Installation
