@@ -4,10 +4,10 @@ function JTP:Update()
 	if not self or not JUtils or not ESX then return; end
 	while not ESX.IsPlayerLoaded() do Citizen.Wait(100); end
 	
-	local canCont = false
-	ESX.TriggerServerCallback('JTP:GetAceGroup', function(group) if group ~= "admin" and group ~= "superadmin" then canCont = 1; else canCont = 2; end; end)
-	while not canCont do Citizen.Wait(0); end
-	if canCont == 1 then return; end
+--	local canCont = false
+--	ESX.TriggerServerCallback('JTP:GetAceGroup', function(group) if group ~= "admin" and group ~= "superadmin" then canCont = 1; else canCont = 2; end; end)
+--	while not canCont do Citizen.Wait(0); end
+--	if canCont == 1 then return; end
 	
 	self.timer = GetGameTimer()
 
