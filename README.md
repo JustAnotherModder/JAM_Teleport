@@ -3,7 +3,7 @@
 - Default teleport key: "PAGEDOWN".
 
 ### Requirements
-* [JAM_Base](https://github.com/JustAnotherModder/JAM_Base)
+* [JAM_Base](https://github.com/JustAnotherModder/JAM)
 
 ## Download & Installation
 
