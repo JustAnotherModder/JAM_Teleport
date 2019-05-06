@@ -16,9 +16,8 @@
 ```
 client_scripts {
 	'JAM_Main.lua',
+	'JAM_Client.lua',
 	'JAM_Utilities.lua',
-
-	'JAM_Commands.lua',
 
 	-- Teleport
 	'JAM_Teleport/JAM_Teleport_Config.lua',
