@@ -1,5 +1,6 @@
 # JAM_Teleport 
 A simple vMenu-style teleport-to-waypoint script.
+Default teleport key: "PAGEDOWN".
 
 ### Requirements
 * [JAM_Base](https://github.com/JustAnotherModder/JAM_Base)
