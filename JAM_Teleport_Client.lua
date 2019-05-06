@@ -14,7 +14,6 @@ function JTP:Update()
 		if tpPressed and (GetGameTimer() - self.timer) > 150 then
 			self.timer = GetGameTimer()
 
-			local plyPed = GetPlayerPed()
 
 			if not IsWaypointActive() then
 				ESX.ShowNotification("~r~Set a waypoint first.")
@@ -24,26 +23,27 @@ function JTP:Update()
 					local blipPos = GetBlipInfoIdCoord(firstBlip)
 
 					local startHeight = 1000.0
-					local rayLength   = 200.0
+					local rayLength   = 100.0
 
 					local ray = StartShapeTestRay(blipPos.x, blipPos.y, startHeight, blipPos.x, blipPos.y, startHeight - rayLength, 1, plyPed, false)
 					local hit,coord,normal,ent = GetShapeTestResult(ray, hit, coord, normal, ent)
 
 					local attempt = 0
+					local plyPed = PlayerPedId()
 					local plyPos = GetEntityCoords(plyPed)
 					if not normal or normal.x == 0.0 then DoScreenFadeOut(300); Citizen.Wait(200); end
 					while not normal or normal.x == 0.0 do
 						Citizen.Wait(100)
 
 						SetEntityCoords(plyPed, blipPos.x, blipPos.y, startHeight)
-						startHeight = startHeight - 100		
-						if startHeight <= -200 then startHeight = 1000.0; end	
+						startHeight = startHeight - 50		
+						if startHeight <= -100 then startHeight = 1000.0; end	
 
 						ray = StartShapeTestRay(blipPos.x, blipPos.y, startHeight, blipPos.x, blipPos.y, startHeight - rayLength, 1, plyPed, false)
 						hit,coord,normal,ent = GetShapeTestResult(ray, hit, coord, normal, ent)
 
 						attempt = attempt + 1
-						if attempt >= 100 then 
+						if attempt >= 1000 then 
 							normal = plyPos 
 							ESX.ShowNotification("~r~Can't teleport to this waypoint.")
 						end
@@ -52,6 +52,7 @@ function JTP:Update()
 					if normal.x == 0.0 and normal.y == 0.0 and normal.z == 0.0 then 
 						ESX.ShowNotification("~r~Can't teleport to this waypoint.")
 					else
+						local plyPed = PlayerPedId()
 						SetEntityCoords(plyPed, normal)
 						DoScreenFadeIn(300);
 					end
