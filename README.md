@@ -9,7 +9,7 @@
 
 ### Manually
 - Download https://github.com/JustAnotherModder/JAM_Teleport/archive/master.zip
-- Put it in the `JAM` folder, inside of your `resources` directory.
+- Extract the JAM_Teleport folder (and its contents) into your `JAM` folder, inside of your `resources` directory.
 - Open `__resource.lua` in your `JAM` folder.
 - Add the files to their respective locations, like so :
 
