@@ -24,3 +24,6 @@ client_scripts {
 	'JAM_Teleport/JAM_Teleport_Client.lua',
 }
 ```
+
+### Notes
+- Any and all improvements must be send back to the author (me), here on github.
