@@ -1,14 +1,15 @@
 local JTP = JAM.Teleport
 
 function JTP:Update()
-	if not self or not JUtils or not ESX then return; end
+	if not self or not JUtils then return; end
+	while not ESX or not self.ESX do Citizen.Wait(100); self.ESX = ESX; end
 	while not ESX.IsPlayerLoaded() do Citizen.Wait(100); end
 	
 	self.timer = GetGameTimer()
 
 	while true do
 		Citizen.Wait(0)
-		local tpPressed = IsControlJustPressed(0, JUtils.Keys[self.EnableKey]) or IsDisabledControlJustPressed(0, JUtils.Keys[self.EnableKey])
+		local tpPressed = IsControlJustPressed(1, JUtils.Keys[self.EnableKey]) or IsDisabledControlJustPressed(1, JUtils.Keys[self.EnableKey])
 		if tpPressed and (GetGameTimer() - self.timer) > 150 then
 
 			self.timer = GetGameTimer()
